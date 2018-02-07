@@ -1,3 +1,4 @@
+require 'pry'
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -50,7 +51,7 @@ class Replicator
     # transported and @inside_replicator will contain the glass
     # in its contents.
     retrieve_glass
-
+    binding.pry
     # Setup an instance variable to access the glass.
     @glass = @inside_replicator.contents.first
 
@@ -111,10 +112,12 @@ class Replicator
     # Go through recipe and transport each ingredient
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|
+      # binding.pry
       @enterprise.transporter.energize(
         # Geordi is in a jokey mood and
         # reprograms the replicator
-        @enterprise.pantry.find_ingredient('banana'),
+        @enterprise.pantry.find_ingredient(ingredient_name),
+        # @enterprise.pantry.find_ingredient("tea", "sugar"),
         @enterprise.pantry.shelf,
         glass_inside_replicator.inside
       )

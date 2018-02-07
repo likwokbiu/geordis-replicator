@@ -67,8 +67,9 @@ class Reactor
   end
 
   def heat_items_in_core
+    # binding.pry
     @core.contents.each do |item|
-      datas_cat_eats_dilithium_crystals
+      # datas_cat_eats_dilithium_crystals
       item.temperature += 1 if draw_power
     end
   end

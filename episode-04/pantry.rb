@@ -23,6 +23,7 @@ class Pantry
   end
 
   def find_ingredient(name)
+    binding.pry
     @shelf.contents.find { |item| item.name == name }
   end
 

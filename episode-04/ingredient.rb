@@ -6,6 +6,7 @@ class Ingredient
   # This method obtains all the ingredients from all the
   # episode files. It's used by the Pantry class to populate itself.
   def self.names
+    binding.pry
     episode_recipe_ingredients =
       Episode::EPISODE_NUMBERS.map do |number|
         Episode.new.recipe.ingredients
